@@ -4,9 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-import MapDemo from "@/components/MapDemo";
-import CesiumDemo from "@/components/CesiumDemo";
-
 
 // ======================================================
 // PROJECT DATA
@@ -185,18 +182,14 @@ const technologies = [
 // ======================================================
 
 export default function Home() {
-
   const [mobileMenu, setMobileMenu] = useState(false);
-
 
   const closeMenu = () => {
     setMobileMenu(false);
   };
 
-
   return (
     <main className="min-h-screen overflow-x-hidden bg-slate-950 text-white">
-
 
       {/* ==================================================
           NAVIGATION
@@ -206,7 +199,6 @@ export default function Home() {
 
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
 
-
           {/* LOGO */}
 
           <Link
@@ -214,12 +206,8 @@ export default function Home() {
             onClick={closeMenu}
             className="text-xl font-bold tracking-wide"
           >
-
             Zachary
-            <span className="text-cyan-400">
-              .
-            </span>
-
+            <span className="text-cyan-400">.</span>
           </Link>
 
 
@@ -292,7 +280,6 @@ export default function Home() {
         {/* MOBILE NAVIGATION */}
 
         {mobileMenu && (
-
           <div className="border-t border-white/10 bg-slate-950 px-6 py-6 md:hidden">
 
             <div className="flex flex-col gap-2">
@@ -348,7 +335,6 @@ export default function Home() {
             </div>
 
           </div>
-
         )}
 
       </nav>
@@ -441,13 +427,11 @@ export default function Home() {
                 href="#projects"
                 className="group rounded-full bg-cyan-400 px-7 py-3.5 font-semibold text-slate-950 transition hover:-translate-y-1 hover:bg-cyan-300"
               >
-
                 View My Work
 
                 <span className="ml-2 transition group-hover:translate-x-1">
                   →
                 </span>
-
               </Link>
 
 
@@ -455,9 +439,7 @@ export default function Home() {
                 href="#contact"
                 className="rounded-full border border-slate-600 px-7 py-3.5 font-semibold text-white transition hover:-translate-y-1 hover:border-cyan-400 hover:text-cyan-400"
               >
-
                 Contact Me
-
               </Link>
 
             </div>
@@ -467,18 +449,16 @@ export default function Home() {
 
             <div className="mt-10 flex flex-wrap gap-2">
 
-              {technologies.slice(0, 6).map(
-                (technology) => (
+              {technologies.slice(0, 6).map((technology) => (
 
-                  <span
-                    key={technology}
-                    className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-slate-300"
-                  >
-                    {technology}
-                  </span>
+                <span
+                  key={technology}
+                  className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-slate-300"
+                >
+                  {technology}
+                </span>
 
-                )
-              )}
+              ))}
 
             </div>
 
@@ -488,7 +468,6 @@ export default function Home() {
             <div className="mt-12 grid max-w-xl grid-cols-3 gap-4 border-t border-white/10 pt-8">
 
               <div>
-
                 <p className="text-3xl font-bold">
                   6+
                 </p>
@@ -496,12 +475,10 @@ export default function Home() {
                 <p className="mt-1 text-xs text-slate-500">
                   Projects
                 </p>
-
               </div>
 
 
               <div>
-
                 <p className="text-3xl font-bold">
                   2
                 </p>
@@ -509,12 +486,10 @@ export default function Home() {
                 <p className="mt-1 text-xs text-slate-500">
                   Map Engines
                 </p>
-
               </div>
 
 
               <div>
-
                 <p className="text-3xl font-bold">
                   3D
                 </p>
@@ -522,7 +497,6 @@ export default function Home() {
                 <p className="mt-1 text-xs text-slate-500">
                   GIS
                 </p>
-
               </div>
 
             </div>
@@ -556,7 +530,7 @@ export default function Home() {
               </div>
 
 
-              {/* SPECIALIZATION BADGE */}
+              {/* SPECIALIZATION */}
 
               <div className="absolute -bottom-5 -left-5 rounded-2xl border border-white/10 bg-slate-900/95 px-5 py-4 shadow-xl backdrop-blur-xl">
 
@@ -571,7 +545,7 @@ export default function Home() {
               </div>
 
 
-              {/* FOCUS BADGE */}
+              {/* FOCUS */}
 
               <div className="absolute -right-4 top-10 rounded-2xl border border-white/10 bg-slate-900/95 px-4 py-3 shadow-xl backdrop-blur-xl">
 
@@ -607,7 +581,6 @@ export default function Home() {
 
           <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
 
-
             <div>
 
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-400">
@@ -615,9 +588,7 @@ export default function Home() {
               </p>
 
               <h2 className="mt-4 text-4xl font-bold leading-tight md:text-5xl">
-
                 Turning geographic data into experiences.
-
               </h2>
 
             </div>
@@ -655,18 +626,16 @@ export default function Home() {
 
               <div className="mt-8 flex flex-wrap gap-2">
 
-                {technologies.map(
-                  (technology) => (
+                {technologies.map((technology) => (
 
-                    <span
-                      key={technology}
-                      className="rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-xs text-slate-300"
-                    >
-                      {technology}
-                    </span>
+                  <span
+                    key={technology}
+                    className="rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-xs text-slate-300"
+                  >
+                    {technology}
+                  </span>
 
-                  )
-                )}
+                ))}
 
               </div>
 
@@ -691,7 +660,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
 
 
-          {/* SECTION HEADER */}
+          {/* HEADER */}
 
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
 
@@ -724,7 +693,7 @@ export default function Home() {
 
 
           {/* ==================================================
-              COMPACT PROJECT CARDS
+              SIX PROJECT CARDS
           ================================================== */}
 
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -737,7 +706,7 @@ export default function Home() {
               >
 
 
-                {/* PROJECT IMAGE */}
+                {/* IMAGE */}
 
                 <div className="relative h-28 overflow-hidden">
 
@@ -750,12 +719,10 @@ export default function Home() {
                   />
 
 
-                  {/* IMAGE OVERLAY */}
-
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent" />
 
 
-                  {/* PROJECT NUMBER */}
+                  {/* NUMBER */}
 
                   <span className="absolute left-3 top-3 rounded-md border border-white/10 bg-slate-950/80 px-2 py-1 text-[10px] font-bold text-cyan-400 backdrop-blur">
 
@@ -766,7 +733,7 @@ export default function Home() {
                 </div>
 
 
-                {/* PROJECT CONTENT */}
+                {/* CONTENT */}
 
                 <div className="p-4">
 
@@ -810,17 +777,15 @@ export default function Home() {
                           key={technology}
                           className="rounded-md border border-white/10 bg-white/5 px-2 py-1 text-[9px] text-slate-300"
                         >
-
                           {technology}
-
                         </span>
 
-                    ))}
+                      ))}
 
                   </div>
 
 
-                  {/* PROJECT LINK */}
+                  {/* LINK */}
 
                   <Link
                     href={project.link}
@@ -838,97 +803,13 @@ export default function Home() {
                 </div>
 
 
-                {/* BOTTOM HOVER LINE */}
+                {/* HOVER LINE */}
 
                 <div className="h-0.5 w-0 bg-cyan-400 transition-all duration-500 group-hover:w-full" />
 
               </article>
 
             ))}
-
-          </div>
-
-
-          {/* ==================================================
-              OPENLAYERS LIVE DEMO
-          ================================================== */}
-
-          <div className="mt-24">
-
-            <div className="mb-6">
-
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-400">
-                Live Demo • Project 01
-              </p>
-
-              <h3 className="mt-2 text-2xl font-bold">
-                OpenLayers Web GIS
-              </h3>
-
-              <p className="mt-3 text-slate-400">
-                Interactive 2D web mapping demonstration.
-              </p>
-
-            </div>
-
-
-            <MapDemo />
-
-
-            <div className="mt-5">
-
-              <Link
-                href="/projects/openlayers"
-                className="inline-flex rounded-full border border-cyan-400/30 px-6 py-3 text-sm font-semibold text-cyan-400 transition hover:bg-cyan-400 hover:text-slate-950"
-              >
-
-                Open Full OpenLayers Project →
-
-              </Link>
-
-            </div>
-
-          </div>
-
-
-          {/* ==================================================
-              CESIUM LIVE DEMO
-          ================================================== */}
-
-          <div className="mt-24">
-
-            <div className="mb-6">
-
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-400">
-                Live Demo • Project 02
-              </p>
-
-              <h3 className="mt-2 text-2xl font-bold">
-                Cesium 3D GIS
-              </h3>
-
-              <p className="mt-3 text-slate-400">
-                Interactive 3D globe visualization.
-              </p>
-
-            </div>
-
-
-            <CesiumDemo />
-
-
-            <div className="mt-5">
-
-              <Link
-                href="/projects/cesium"
-                className="inline-flex rounded-full border border-cyan-400/30 px-6 py-3 text-sm font-semibold text-cyan-400 transition hover:bg-cyan-400 hover:text-slate-950"
-              >
-
-                Open Full Cesium Project →
-
-              </Link>
-
-            </div>
 
           </div>
 
@@ -949,7 +830,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
 
 
-          {/* SKILLS HEADER */}
+          {/* HEADER */}
 
           <div className="max-w-3xl">
 
@@ -1005,9 +886,7 @@ export default function Home() {
 
 
                 <p className="mt-4 text-sm leading-6 text-slate-400">
-
                   {skill.description}
-
                 </p>
 
 
@@ -1051,9 +930,7 @@ export default function Home() {
 
 
           <h2 className="mt-4 text-4xl font-bold md:text-6xl">
-
             Build something amazing.
-
           </h2>
 
 
@@ -1072,20 +949,13 @@ export default function Home() {
 
           <div className="mt-9 flex flex-wrap justify-center gap-4">
 
-
-            {/* EMAIL */}
-
             <a
               href="mailto:your-email@example.com"
               className="rounded-full bg-cyan-400 px-7 py-3.5 font-semibold text-slate-950 transition hover:-translate-y-1 hover:bg-cyan-300"
             >
-
               Email Me
-
             </a>
 
-
-            {/* GITHUB */}
 
             <a
               href="https://github.com/"
@@ -1093,13 +963,9 @@ export default function Home() {
               rel="noopener noreferrer"
               className="rounded-full border border-slate-600 px-7 py-3.5 font-semibold text-white transition hover:-translate-y-1 hover:border-cyan-400 hover:text-cyan-400"
             >
-
               GitHub
-
             </a>
 
-
-            {/* LINKEDIN */}
 
             <a
               href="https://www.linkedin.com/"
@@ -1107,9 +973,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="rounded-full border border-slate-600 px-7 py-3.5 font-semibold text-white transition hover:-translate-y-1 hover:border-cyan-400 hover:text-cyan-400"
             >
-
               LinkedIn
-
             </a>
 
           </div>
@@ -1129,10 +993,8 @@ export default function Home() {
 
 
           <p>
-
             © {new Date().getFullYear()} Zachary Maynard.
             All rights reserved.
-
           </p>
 
 
