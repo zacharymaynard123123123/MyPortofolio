@@ -38,7 +38,7 @@ export default function Home() {
 
         <div>
           <Image
-            src="/images/profile.jpg"
+            src="profile.jpg"
             alt="Zachary Maynard - GIS & Web Developer"
             width={400}
             height={400}
