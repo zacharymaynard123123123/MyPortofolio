@@ -245,7 +245,7 @@ export default function Home() {
               href="#projects"
               className="text-sm text-slate-300 transition hover:text-cyan-400"
             >
-              Projects
+              My Work
             </Link>
 
             <Link
@@ -322,7 +322,7 @@ export default function Home() {
                 onClick={closeMenu}
                 className="rounded-xl px-4 py-3 text-slate-300 transition hover:bg-white/5 hover:text-cyan-400"
               >
-                Projects
+                My Work
               </Link>
 
               <Link
@@ -688,7 +688,7 @@ export default function Home() {
 
 
       {/* ==================================================
-          PROJECTS
+          MY WORK / PROJECTS
       ================================================== */}
 
       <section
@@ -699,7 +699,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
 
 
-          {/* HEADER */}
+          {/* SECTION HEADER */}
 
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
 
@@ -710,7 +710,7 @@ export default function Home() {
               </p>
 
               <h2 className="mt-4 text-4xl font-bold md:text-5xl">
-                Featured Projects
+                Selected Projects
               </h2>
 
               <p className="mt-5 text-lg leading-8 text-slate-400">
@@ -732,66 +732,74 @@ export default function Home() {
 
 
           {/* ==================================================
-              PROJECT CARDS
+              COMPACT PROJECT CARDS
           ================================================== */}
 
-          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
 
             {projects.map((project) => (
 
               <article
                 key={project.number}
-                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] transition duration-500 hover:-translate-y-2 hover:border-cyan-400/40 hover:bg-white/[0.05]"
+                className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition duration-300 hover:-translate-y-1 hover:border-cyan-400/30"
               >
 
 
-                {/* IMAGE */}
+                {/* PROJECT IMAGE */}
 
-                <div className="relative h-52 overflow-hidden">
+                <div className="relative h-40 overflow-hidden">
 
                   <Image
                     src={project.image}
                     alt={project.title}
                     fill
-                    className="object-cover transition duration-700 group-hover:scale-110"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition duration-500 group-hover:scale-105"
                   />
 
 
-                  {/* IMAGE OVERLAY */}
+                  {/* IMAGE GRADIENT */}
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent" />
 
 
-                  {/* NUMBER */}
+                  {/* PROJECT NUMBER */}
 
-                  <div className="absolute left-5 top-5 rounded-full border border-white/20 bg-slate-950/70 px-3 py-1 text-xs font-bold text-cyan-400 backdrop-blur-md">
+                  <span className="absolute left-3 top-3 rounded-md border border-white/10 bg-slate-950/80 px-2 py-1 text-[10px] font-bold text-cyan-400 backdrop-blur">
 
                     {project.number}
 
-                  </div>
-
-
-                  {/* CATEGORY */}
-
-                  <div className="absolute right-5 top-5 rounded-full border border-white/20 bg-slate-950/70 px-3 py-1 text-[10px] font-semibold tracking-wider text-slate-300 backdrop-blur-md">
-
-                    {project.category}
-
-                  </div>
+                  </span>
 
                 </div>
 
 
-                {/* CONTENT */}
+                {/* PROJECT CONTENT */}
 
-                <div className="p-7">
+                <div className="p-5">
 
-                  <h3 className="text-2xl font-bold">
+
+                  {/* CATEGORY */}
+
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-cyan-400">
+
+                    {project.category}
+
+                  </p>
+
+
+                  {/* TITLE */}
+
+                  <h3 className="mt-2 text-lg font-bold text-white">
+
                     {project.title}
+
                   </h3>
 
 
-                  <p className="mt-4 leading-7 text-slate-400">
+                  {/* DESCRIPTION */}
+
+                  <p className="mt-2 line-clamp-2 text-sm leading-6 text-slate-400">
 
                     {project.description}
 
@@ -800,36 +808,36 @@ export default function Home() {
 
                   {/* TECHNOLOGIES */}
 
-                  <div className="mt-7 flex flex-wrap gap-2">
+                  <div className="mt-4 flex flex-wrap gap-1.5">
 
-                    {project.technologies.map(
-                      (technology) => (
+                    {project.technologies
+                      .slice(0, 3)
+                      .map((technology) => (
 
                         <span
                           key={technology}
-                          className="rounded-lg bg-slate-800 px-3 py-1.5 text-xs text-slate-300"
+                          className="rounded-md border border-white/10 bg-white/5 px-2 py-1 text-[10px] text-slate-300"
                         >
 
                           {technology}
 
                         </span>
 
-                      )
-                    )}
+                    ))}
 
                   </div>
 
 
-                  {/* REAL PROJECT LINK */}
+                  {/* PROJECT LINK */}
 
                   <Link
                     href={project.link}
-                    className="mt-7 inline-flex items-center text-sm font-semibold text-cyan-400 transition hover:text-cyan-300"
+                    className="mt-5 inline-flex items-center text-xs font-semibold text-cyan-400 transition hover:text-cyan-300"
                   >
 
                     View Project
 
-                    <span className="ml-2 transition group-hover:translate-x-1">
+                    <span className="ml-1 transition group-hover:translate-x-1">
                       →
                     </span>
 
@@ -838,9 +846,9 @@ export default function Home() {
                 </div>
 
 
-                {/* BOTTOM LINE */}
+                {/* BOTTOM HOVER LINE */}
 
-                <div className="absolute bottom-0 left-0 h-1 w-0 bg-cyan-400 transition-all duration-500 group-hover:w-full" />
+                <div className="h-0.5 w-0 bg-cyan-400 transition-all duration-500 group-hover:w-full" />
 
               </article>
 
@@ -1050,7 +1058,7 @@ export default function Home() {
 
           <h2 className="mt-4 text-4xl font-bold md:text-6xl">
 
-            Let's build something amazing.
+            Build something amazing.
 
           </h2>
 
@@ -1061,7 +1069,7 @@ export default function Home() {
             geospatial visualization or modern
             web development?
 
-            Let's connect.
+            Connect.
 
           </p>
 
@@ -1071,7 +1079,7 @@ export default function Home() {
           <div className="mt-9 flex flex-wrap justify-center gap-4">
 
 
-            {/* CHANGE THIS EMAIL */}
+            {/* CHANGE EMAIL */}
 
             <a
               href="mailto:your-email@example.com"
@@ -1147,7 +1155,7 @@ export default function Home() {
               href="#projects"
               className="transition hover:text-cyan-400"
             >
-              Projects
+              My Work
             </Link>
 
             <Link
