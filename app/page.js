@@ -5,7 +5,7 @@ export default function Home() {
     <main>
       {/* Navigation */}
       <nav>
-        <h2>Zachary Maynard-Senior Developer</h2>
+        <h2>Zachary Maynard-Senior Developer      123456789</h2>
 
         <div>
           <a href="#about">About</a>
