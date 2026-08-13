@@ -16,35 +16,29 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section>
-        <p>GIS & Web Developer</p>
+      <section id="about">
+  <div>
+    {/* Profile Photo */}
+    <Image
+      src="/images/profile.jpg"
+      alt="Zachary Maynard - GIS & Web Developer"
+      width={400}
+      height={400}
+      className="rounded-full object-cover"
+    />
 
-        <h1>
-          Building interactive
-          <br />
-          geospatial experiences.
-        </h1>
+    {/* About Me */}
+    <div>
+      <p>About Me</p>
 
-        <p>
-          I build modern web applications using React,
-          Next.js, Mapbox, Cesium, OpenLayers and other
-          geospatial technologies.
-        </p>
+        <h2>GIS meets modern web development.</h2>
 
-        <div>
-          <a href="#projects">View Projects</a>
-          <a href="#contact">Contact Me</a>
-        </div>
-
-        <div>
-          <Image
-            src="/images/profile.jpg"
-            alt="Zachary Maynard - GIS & Web Developer"
-            width={400}
-            height={400}
-            priority
-            className="rounded-full object-cover"
-          />
+            <p>
+             I’m a GIS & Web Developer passionate about building
+              interactive 2D and 3D geospatial applications that
+            turn complex spatial data into useful web experiences.
+           </p>
+          </div>
         </div>
       </section>
 
