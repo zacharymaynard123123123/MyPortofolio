@@ -7,44 +7,58 @@ export default function Home() {
       {/* =========================
           Navigation
       ========================== */}
-      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-lg">
-        <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-
-          <h2 className="text-lg font-bold tracking-tight">
-            Zachary Maynard
-            <span className="text-blue-400">.</span>
-          </h2>
-
-          <div className="hidden md:flex items-center gap-8 text-sm text-gray-300">
-            <a
-              href="#about"
-              className="hover:text-blue-400 transition"
-            >
-              About
-            </a>
+      <nav className="fixed top-0 left-0 right-0 z-50">
+        <div className="max-w-7xl mx-auto px-6 pt-5">
+          <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-slate-950/70 px-6 py-4 backdrop-blur-xl shadow-lg">
 
             <a
-              href="#projects"
-              className="hover:text-blue-400 transition"
+              href="#"
+              className="text-xl font-bold tracking-tight"
             >
-              Projects
+              Zachary
+              <span className="text-blue-400">.</span>
             </a>
 
-            <a
-              href="#skills"
-              className="hover:text-blue-400 transition"
-            >
-              Skills
-            </a>
+            <div className="hidden md:flex items-center gap-8 text-sm">
+
+              <a
+                href="#about"
+                className="text-gray-300 hover:text-white transition"
+              >
+                About
+              </a>
+
+              <a
+                href="#projects"
+                className="text-gray-300 hover:text-white transition"
+              >
+                Projects
+              </a>
+
+              <a
+                href="#skills"
+                className="text-gray-300 hover:text-white transition"
+              >
+                Skills
+              </a>
+
+              <a
+                href="#contact"
+                className="text-gray-300 hover:text-white transition"
+              >
+                Contact
+              </a>
+
+            </div>
 
             <a
               href="#contact"
-              className="hover:text-blue-400 transition"
+              className="hidden sm:block rounded-full bg-blue-500 px-5 py-2 text-sm font-medium hover:bg-blue-600 transition"
             >
-              Contact
+              Let's Talk
             </a>
-          </div>
 
+          </div>
         </div>
       </nav>
 
@@ -52,13 +66,38 @@ export default function Home() {
       {/* =========================
           Hero
       ========================== */}
-      <section className="min-h-screen flex items-center px-6 pt-24">
+      <section className="relative min-h-screen overflow-hidden flex items-center px-6 pt-24">
+
+        <div className="absolute inset-0 -z-10">
+
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_40%,rgba(59,130,246,0.15),transparent_35%)]" />
+
+          <div
+            className="absolute inset-0 opacity-[0.08]"
+            style={{
+              backgroundImage: `
+                linear-gradient(
+                  rgba(255,255,255,0.5) 1px,
+                  transparent 1px
+                ),
+                linear-gradient(
+                  90deg,
+                  rgba(255,255,255,0.5) 1px,
+                  transparent 1px
+                )
+              `,
+              backgroundSize: "60px 60px",
+            }}
+          />
+
+        </div>
+
 
         <div className="max-w-7xl mx-auto w-full">
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
 
-            {/* Left */}
+            {/* Hero Left */}
             <div>
 
               <p className="text-sm uppercase tracking-[0.3em] text-blue-400 mb-5">
@@ -99,12 +138,11 @@ export default function Home() {
             </div>
 
 
-            {/* Right - Profile */}
+            {/* Profile */}
             <div className="flex justify-center md:justify-end">
 
               <div className="relative">
 
-                {/* Glow */}
                 <div className="absolute inset-0 rounded-full bg-blue-500/20 blur-3xl" />
 
                 <Image
@@ -113,7 +151,7 @@ export default function Home() {
                   width={420}
                   height={420}
                   priority
-                  className="relative rounded-full object-cover border-4 border-slate-800 shadow-2xl"
+                  className="relative rounded-full object-cover border-4 border-slate-800 shadow-2xl ring-1 ring-blue-400/30"
                 />
 
               </div>
@@ -154,9 +192,11 @@ export default function Home() {
               spatial data and modern frontend development.
             </p>
 
+
             <div className="grid grid-cols-2 gap-4">
 
-              <div className="p-6 rounded-xl border border-white/10 bg-white/5">
+              <div className="p-6 rounded-xl border border-white/10 bg-white/5 hover:border-blue-400/50 transition">
+
                 <h3 className="font-semibold">
                   2D Mapping
                 </h3>
@@ -164,9 +204,12 @@ export default function Home() {
                 <p className="mt-2 text-sm text-gray-400">
                   Interactive web maps and spatial applications.
                 </p>
+
               </div>
 
-              <div className="p-6 rounded-xl border border-white/10 bg-white/5">
+
+              <div className="p-6 rounded-xl border border-white/10 bg-white/5 hover:border-blue-400/50 transition">
+
                 <h3 className="font-semibold">
                   3D Visualization
                 </h3>
@@ -174,9 +217,12 @@ export default function Home() {
                 <p className="mt-2 text-sm text-gray-400">
                   Immersive geospatial experiences with Cesium.
                 </p>
+
               </div>
 
-              <div className="p-6 rounded-xl border border-white/10 bg-white/5">
+
+              <div className="p-6 rounded-xl border border-white/10 bg-white/5 hover:border-blue-400/50 transition">
+
                 <h3 className="font-semibold">
                   Spatial Data
                 </h3>
@@ -184,9 +230,12 @@ export default function Home() {
                 <p className="mt-2 text-sm text-gray-400">
                   Working with spatial databases and GIS data.
                 </p>
+
               </div>
 
-              <div className="p-6 rounded-xl border border-white/10 bg-white/5">
+
+              <div className="p-6 rounded-xl border border-white/10 bg-white/5 hover:border-blue-400/50 transition">
+
                 <h3 className="font-semibold">
                   Web Development
                 </h3>
@@ -194,6 +243,7 @@ export default function Home() {
                 <p className="mt-2 text-sm text-gray-400">
                   Modern frontend applications with React and Next.js.
                 </p>
+
               </div>
 
             </div>
@@ -210,121 +260,278 @@ export default function Home() {
       ========================== */}
       <section
         id="projects"
-        className="py-24 px-6"
+        className="py-28 px-6 border-t border-white/10"
       >
 
         <div className="max-w-7xl mx-auto">
 
-          <p className="text-sm uppercase tracking-[0.3em] text-blue-400">
-            Selected Work
-          </p>
+          <div className="max-w-3xl">
 
-          <h2 className="mt-4 text-4xl md:text-5xl font-bold">
-            Projects
-          </h2>
+            <p className="text-sm uppercase tracking-[0.3em] text-blue-400">
+              Selected Work
+            </p>
+
+            <h2 className="mt-4 text-4xl md:text-6xl font-bold">
+              Projects that turn
+              <span className="text-blue-400"> spatial data </span>
+              into experiences.
+            </h2>
+
+            <p className="mt-6 text-gray-400 text-lg leading-relaxed">
+              A selection of mapping, visualization and
+              geospatial applications built with modern
+              web technologies.
+            </p>
+
+          </div>
 
 
-          <div className="grid md:grid-cols-3 gap-8 mt-12">
+          <div className="grid lg:grid-cols-3 gap-8 mt-14">
 
 
-            {/* Project 1 */}
-            <article className="group rounded-2xl overflow-hidden border border-white/10 bg-white/5 hover:border-blue-400/50 transition">
+            {/* Project 01 */}
+            <article className="group rounded-2xl overflow-hidden border border-white/10 bg-slate-900/70 hover:border-blue-400/50 transition duration-500">
 
-              <Image
-                src="/images/map-project.jpg"
-                alt="Interactive Map Application"
-                width={800}
-                height={500}
-                className="w-full h-56 object-cover group-hover:scale-105 transition duration-500"
-              />
+              <div className="relative overflow-hidden">
 
-              <div className="p-6">
+                <Image
+                  src="/images/map-project.jpg"
+                  alt="Interactive Map Application"
+                  width={800}
+                  height={500}
+                  className="w-full h-64 object-cover group-hover:scale-110 transition duration-700"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+
+                <div className="absolute top-4 left-4">
+
+                  <span className="px-3 py-1 rounded-full bg-blue-500/90 text-xs font-medium">
+                    01
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <div className="p-7">
 
                 <p className="text-sm text-blue-400">
-                  01
+                  WEB MAPPING
                 </p>
 
-                <h3 className="mt-2 text-xl font-semibold">
+                <h3 className="mt-2 text-2xl font-semibold">
                   Interactive Map Application
                 </h3>
 
-                <p className="mt-4 text-gray-400">
-                  A web mapping application built with React
-                  and Mapbox.
+                <p className="mt-4 text-gray-400 leading-relaxed">
+                  An interactive web mapping application for
+                  exploring geographic information, locations
+                  and spatial features.
                 </p>
 
-                <p className="mt-5 text-sm text-gray-500">
-                  React • Mapbox • GeoJSON
-                </p>
+
+                <div className="flex flex-wrap gap-2 mt-6">
+
+                  <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-gray-300">
+                    React
+                  </span>
+
+                  <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-gray-300">
+                    Mapbox
+                  </span>
+
+                  <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-gray-300">
+                    GeoJSON
+                  </span>
+
+                </div>
+
+
+                <div className="flex gap-3 mt-7">
+
+                  <a
+                    href="#"
+                    className="flex-1 text-center px-4 py-3 rounded-lg bg-blue-500 hover:bg-blue-600 transition text-sm font-medium"
+                  >
+                    Live Demo
+                  </a>
+
+                  <a
+                    href="#"
+                    className="flex-1 text-center px-4 py-3 rounded-lg border border-white/10 hover:bg-white/5 transition text-sm font-medium"
+                  >
+                    GitHub
+                  </a>
+
+                </div>
 
               </div>
 
             </article>
 
 
-            {/* Project 2 */}
-            <article className="group rounded-2xl overflow-hidden border border-white/10 bg-white/5 hover:border-blue-400/50 transition">
+            {/* Project 02 */}
+            <article className="group rounded-2xl overflow-hidden border border-white/10 bg-slate-900/70 hover:border-blue-400/50 transition duration-500">
 
-              <Image
-                src="/images/cesium-project.jpg"
-                alt="3D Cesium geospatial viewer"
-                width={800}
-                height={500}
-                className="w-full h-56 object-cover group-hover:scale-105 transition duration-500"
-              />
+              <div className="relative overflow-hidden">
 
-              <div className="p-6">
+                <Image
+                  src="/images/cesium-project.jpg"
+                  alt="3D Cesium Geospatial Viewer"
+                  width={800}
+                  height={500}
+                  className="w-full h-64 object-cover group-hover:scale-110 transition duration-700"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+
+                <div className="absolute top-4 left-4">
+
+                  <span className="px-3 py-1 rounded-full bg-blue-500/90 text-xs font-medium">
+                    02
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <div className="p-7">
 
                 <p className="text-sm text-blue-400">
-                  02
+                  3D GIS
                 </p>
 
-                <h3 className="mt-2 text-xl font-semibold">
+                <h3 className="mt-2 text-2xl font-semibold">
                   3D Geospatial Viewer
                 </h3>
 
-                <p className="mt-4 text-gray-400">
-                  A 3D visualization application using Cesium.
+                <p className="mt-4 text-gray-400 leading-relaxed">
+                  A 3D geospatial visualization application
+                  for exploring terrain, buildings and spatial
+                  information in an immersive environment.
                 </p>
 
-                <p className="mt-5 text-sm text-gray-500">
-                  Cesium • JavaScript • 3D GIS
-                </p>
+
+                <div className="flex flex-wrap gap-2 mt-6">
+
+                  <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-gray-300">
+                    Cesium
+                  </span>
+
+                  <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-gray-300">
+                    JavaScript
+                  </span>
+
+                  <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-gray-300">
+                    3D GIS
+                  </span>
+
+                </div>
+
+
+                <div className="flex gap-3 mt-7">
+
+                  <a
+                    href="#"
+                    className="flex-1 text-center px-4 py-3 rounded-lg bg-blue-500 hover:bg-blue-600 transition text-sm font-medium"
+                  >
+                    Live Demo
+                  </a>
+
+                  <a
+                    href="#"
+                    className="flex-1 text-center px-4 py-3 rounded-lg border border-white/10 hover:bg-white/5 transition text-sm font-medium"
+                  >
+                    GitHub
+                  </a>
+
+                </div>
 
               </div>
 
             </article>
 
 
-            {/* Project 3 */}
-            <article className="group rounded-2xl overflow-hidden border border-white/10 bg-white/5 hover:border-blue-400/50 transition">
+            {/* Project 03 */}
+            <article className="group rounded-2xl overflow-hidden border border-white/10 bg-slate-900/70 hover:border-blue-400/50 transition duration-500">
 
-              <Image
-                src="/images/dashboard-project.jpg"
-                alt="GIS dashboard"
-                width={800}
-                height={500}
-                className="w-full h-56 object-cover group-hover:scale-105 transition duration-500"
-              />
+              <div className="relative overflow-hidden">
 
-              <div className="p-6">
+                <Image
+                  src="/images/dashboard-project.jpg"
+                  alt="GIS Dashboard"
+                  width={800}
+                  height={500}
+                  className="w-full h-64 object-cover group-hover:scale-110 transition duration-700"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+
+                <div className="absolute top-4 left-4">
+
+                  <span className="px-3 py-1 rounded-full bg-blue-500/90 text-xs font-medium">
+                    03
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <div className="p-7">
 
                 <p className="text-sm text-blue-400">
-                  03
+                  GIS DASHBOARD
                 </p>
 
-                <h3 className="mt-2 text-xl font-semibold">
+                <h3 className="mt-2 text-2xl font-semibold">
                   GIS Dashboard
                 </h3>
 
-                <p className="mt-4 text-gray-400">
-                  An interactive GIS dashboard for exploring
-                  spatial information.
+                <p className="mt-4 text-gray-400 leading-relaxed">
+                  An interactive dashboard for exploring
+                  spatial information, analyzing geographic
+                  data and visualizing important metrics.
                 </p>
 
-                <p className="mt-5 text-sm text-gray-500">
-                  React • OpenLayers • PostGIS
-                </p>
+
+                <div className="flex flex-wrap gap-2 mt-6">
+
+                  <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-gray-300">
+                    React
+                  </span>
+
+                  <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-gray-300">
+                    OpenLayers
+                  </span>
+
+                  <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-gray-300">
+                    PostGIS
+                  </span>
+
+                </div>
+
+
+                <div className="flex gap-3 mt-7">
+
+                  <a
+                    href="#"
+                    className="flex-1 text-center px-4 py-3 rounded-lg bg-blue-500 hover:bg-blue-600 transition text-sm font-medium"
+                  >
+                    Live Demo
+                  </a>
+
+                  <a
+                    href="#"
+                    className="flex-1 text-center px-4 py-3 rounded-lg border border-white/10 hover:bg-white/5 transition text-sm font-medium"
+                  >
+                    GitHub
+                  </a>
+
+                </div>
 
               </div>
 
@@ -338,51 +545,273 @@ export default function Home() {
 
 
       {/* =========================
-          Skills
+          Skills - Step 4
       ========================== */}
       <section
         id="skills"
-        className="py-24 px-6 border-t border-white/10"
+        className="relative py-28 px-6 border-t border-white/10 overflow-hidden"
       >
 
-        <div className="max-w-6xl mx-auto">
-
-          <p className="text-sm uppercase tracking-[0.3em] text-blue-400">
-            Technology
-          </p>
-
-          <h2 className="mt-4 text-4xl md:text-5xl font-bold">
-            Skills
-          </h2>
+        {/* Background Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-blue-500/10 blur-3xl rounded-full pointer-events-none" />
 
 
-          <div className="flex flex-wrap gap-3 mt-10">
+        <div className="relative max-w-7xl mx-auto">
 
-            {[
-              "JavaScript",
-              "TypeScript",
-              "React",
-              "Next.js",
-              "Node.js",
-              "Express",
-              "MongoDB",
-              "Mapbox",
-              "Cesium",
-              "OpenLayers",
-              "PostGIS",
-              "GeoServer",
-              "Git",
-              "GitHub",
-            ].map((skill) => (
+          {/* Header */}
+          <div className="max-w-3xl">
 
-              <span
-                key={skill}
-                className="px-5 py-3 rounded-full border border-white/10 bg-white/5 text-gray-300 hover:border-blue-400 hover:text-blue-400 transition"
-              >
-                {skill}
-              </span>
+            <p className="text-sm uppercase tracking-[0.3em] text-blue-400">
+              Technology
+            </p>
 
-            ))}
+            <h2 className="mt-4 text-4xl md:text-6xl font-bold">
+              Tools I use to build
+              <span className="text-blue-400"> geospatial systems.</span>
+            </h2>
+
+            <p className="mt-6 text-lg text-gray-400 leading-relaxed">
+              A combination of modern web technologies,
+              mapping libraries and spatial data tools for
+              building interactive GIS applications.
+            </p>
+
+          </div>
+
+
+          {/* Skills Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-14">
+
+
+            {/* =========================
+                Frontend
+            ========================== */}
+            <div className="group rounded-2xl border border-white/10 bg-white/[0.03] p-7 hover:border-blue-400/50 hover:bg-white/[0.05] transition duration-500">
+
+              <div className="flex items-center justify-between">
+
+                <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-400/20 flex items-center justify-center text-blue-400 text-xl">
+                  {"</>"}
+                </div>
+
+                <span className="text-xs text-gray-600">
+                  01
+                </span>
+
+              </div>
+
+              <h3 className="mt-6 text-xl font-semibold">
+                Frontend & Web
+              </h3>
+
+              <p className="mt-3 text-sm text-gray-400 leading-relaxed">
+                Modern interfaces and web applications.
+              </p>
+
+
+              <div className="flex flex-wrap gap-2 mt-6">
+
+                {[
+                  "JavaScript",
+                  "TypeScript",
+                  "React",
+                  "Next.js",
+                  "Node.js",
+                ].map((skill) => (
+
+                  <span
+                    key={skill}
+                    className="px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 group-hover:border-blue-400/30 transition"
+                  >
+                    {skill}
+                  </span>
+
+                ))}
+
+              </div>
+
+            </div>
+
+
+            {/* =========================
+                Geospatial
+            ========================== */}
+            <div className="group rounded-2xl border border-white/10 bg-white/[0.03] p-7 hover:border-blue-400/50 hover:bg-white/[0.05] transition duration-500">
+
+              <div className="flex items-center justify-between">
+
+                <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-400/20 flex items-center justify-center text-blue-400 text-xl">
+                  ◈
+                </div>
+
+                <span className="text-xs text-gray-600">
+                  02
+                </span>
+
+              </div>
+
+              <h3 className="mt-6 text-xl font-semibold">
+                Geospatial
+              </h3>
+
+              <p className="mt-3 text-sm text-gray-400 leading-relaxed">
+                2D mapping and 3D geospatial visualization.
+              </p>
+
+
+              <div className="flex flex-wrap gap-2 mt-6">
+
+                {[
+                  "Mapbox",
+                  "Cesium",
+                  "OpenLayers",
+                  "GeoJSON",
+                ].map((skill) => (
+
+                  <span
+                    key={skill}
+                    className="px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 group-hover:border-blue-400/30 transition"
+                  >
+                    {skill}
+                  </span>
+
+                ))}
+
+              </div>
+
+            </div>
+
+
+            {/* =========================
+                Backend & Data
+            ========================== */}
+            <div className="group rounded-2xl border border-white/10 bg-white/[0.03] p-7 hover:border-blue-400/50 hover:bg-white/[0.05] transition duration-500">
+
+              <div className="flex items-center justify-between">
+
+                <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-400/20 flex items-center justify-center text-blue-400 text-xl">
+                  DB
+                </div>
+
+                <span className="text-xs text-gray-600">
+                  03
+                </span>
+
+              </div>
+
+              <h3 className="mt-6 text-xl font-semibold">
+                Backend & Data
+              </h3>
+
+              <p className="mt-3 text-sm text-gray-400 leading-relaxed">
+                APIs, databases and spatial data infrastructure.
+              </p>
+
+
+              <div className="flex flex-wrap gap-2 mt-6">
+
+                {[
+                  "PostGIS",
+                  "GeoServer",
+                  "Express",
+                  "MongoDB",
+                ].map((skill) => (
+
+                  <span
+                    key={skill}
+                    className="px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 group-hover:border-blue-400/30 transition"
+                  >
+                    {skill}
+                  </span>
+
+                ))}
+
+              </div>
+
+            </div>
+
+
+            {/* =========================
+                Tools
+            ========================== */}
+            <div className="group rounded-2xl border border-white/10 bg-white/[0.03] p-7 hover:border-blue-400/50 hover:bg-white/[0.05] transition duration-500">
+
+              <div className="flex items-center justify-between">
+
+                <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-400/20 flex items-center justify-center text-blue-400 text-xl">
+                  ⚡
+                </div>
+
+                <span className="text-xs text-gray-600">
+                  04
+                </span>
+
+              </div>
+
+              <h3 className="mt-6 text-xl font-semibold">
+                Tools & Workflow
+              </h3>
+
+              <p className="mt-3 text-sm text-gray-400 leading-relaxed">
+                Development tools and project workflow.
+              </p>
+
+
+              <div className="flex flex-wrap gap-2 mt-6">
+
+                {[
+                  "Git",
+                  "GitHub",
+                  "VS Code",
+                  "REST APIs",
+                ].map((skill) => (
+
+                  <span
+                    key={skill}
+                    className="px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 group-hover:border-blue-400/30 transition"
+                  >
+                    {skill}
+                  </span>
+
+                ))}
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          {/* Main Technologies */}
+          <div className="mt-20">
+
+            <p className="text-sm text-gray-500 uppercase tracking-[0.25em]">
+              Core Technologies
+            </p>
+
+            <div className="flex flex-wrap gap-3 mt-6">
+
+              {[
+                "React",
+                "Next.js",
+                "Mapbox",
+                "Cesium",
+                "OpenLayers",
+                "PostGIS",
+                "GeoServer",
+                "TypeScript",
+              ].map((skill) => (
+
+                <span
+                  key={skill}
+                  className="px-5 py-3 rounded-full border border-blue-400/20 bg-blue-400/5 text-blue-300 hover:bg-blue-400/10 hover:border-blue-400/50 transition"
+                >
+                  {skill}
+                </span>
+
+              ))}
+
+            </div>
 
           </div>
 
@@ -406,7 +835,7 @@ export default function Home() {
           </p>
 
           <h2 className="mt-5 text-5xl md:text-6xl font-bold">
-            Build something
+            build something
             <span className="block text-blue-400">
               interesting.
             </span>
