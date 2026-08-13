@@ -1,21 +1,13 @@
+@import "ol/ol.css";
 @import "tailwindcss";
 
+/* ======================================================
+   GLOBAL
+   ====================================================== */
+
 :root {
-  --background: #f7fafc;
-  --foreground: #243447;
-
-  --primary: #3b82f6;
-  --primary-light: #eaf4ff;
-
-  --teal: #14b8a6;
-  --teal-light: #e8f8f5;
-
-  --muted: #64748b;
-  --border: #e2e8f0;
-}
-
-* {
-  box-sizing: border-box;
+  --background: #020617;
+  --foreground: #f8fafc;
 }
 
 html {
@@ -26,302 +18,200 @@ body {
   margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 }
 
-/* Links */
+/* ======================================================
+   SELECTION
+   ====================================================== */
+
+::selection {
+  background: rgba(34, 211, 238, 0.3);
+  color: white;
+}
+
+
+/* ======================================================
+   SCROLLBAR
+   ====================================================== */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #22d3ee;
+}
+
+
+/* ======================================================
+   LINKS
+   ====================================================== */
 
 a {
-  color: inherit;
   text-decoration: none;
 }
 
-a:hover {
-  color: var(--primary);
+
+/* ======================================================
+   BUTTONS
+   ====================================================== */
+
+button {
+  font-family: inherit;
 }
 
-/* Navigation */
 
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+/* ======================================================
+   OPENLAYERS
+   ====================================================== */
 
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 24px 30px;
+.ol-control {
+  display: none;
 }
 
-nav h2 {
+.ol-attribution {
+  font-size: 10px;
+}
+
+.ol-attribution ul {
   margin: 0;
-  font-size: 20px;
-  font-weight: 700;
+  padding: 0;
 }
 
-nav div {
-  display: flex;
-  gap: 28px;
+.ol-viewport {
+  border-radius: 0;
 }
 
-nav a {
-  color: var(--muted);
-  font-size: 14px;
-  font-weight: 500;
-  transition: color 0.2s ease;
+
+/* ======================================================
+   MAP
+   ====================================================== */
+
+.map-container {
+  width: 100%;
+  height: 500px;
 }
 
-nav a:hover {
-  color: var(--primary);
+
+/* ======================================================
+   ANIMATIONS
+   ====================================================== */
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
-/* General sections */
-
-section {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 100px 30px;
+.animate-float {
+  animation: float 5s ease-in-out infinite;
 }
 
-/* Hero */
 
-section:first-of-type {
-  min-height: 650px;
+/* ======================================================
+   GLOW
+   ====================================================== */
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.glow-cyan {
+  box-shadow:
+    0 0 30px rgba(34, 211, 238, 0.15),
+    0 0 80px rgba(34, 211, 238, 0.05);
 }
 
-section:first-of-type > p:first-child {
-  color: var(--teal);
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+
+/* ======================================================
+   GLASS EFFECT
+   ====================================================== */
+
+.glass {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
-section:first-of-type h1 {
-  max-width: 850px;
-  margin: 18px 0;
 
-  color: var(--foreground);
-  font-size: clamp(48px, 7vw, 82px);
-  line-height: 1.05;
-  letter-spacing: -0.04em;
+/* ======================================================
+   GRADIENT TEXT
+   ====================================================== */
+
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    #22d3ee,
+    #60a5fa,
+    #6366f1
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-section:first-of-type p {
-  max-width: 650px;
-  color: var(--muted);
-  font-size: 18px;
+
+/* ======================================================
+   FOCUS
+   ====================================================== */
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #22d3ee;
+  outline-offset: 3px;
 }
 
-/* Hero buttons */
 
-section:first-of-type div {
-  display: flex;
-  gap: 14px;
-  margin-top: 25px;
+/* ======================================================
+   IMAGE
+   ====================================================== */
+
+img {
+  max-width: 100%;
 }
 
-section:first-of-type div a {
-  display: inline-block;
-  padding: 13px 22px;
-  border-radius: 10px;
 
-  background: var(--primary);
-  color: white;
-
-  font-size: 14px;
-  font-weight: 600;
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-section:first-of-type div a:hover {
-  color: white;
-  transform: translateY(-2px);
-
-  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.18);
-}
-
-section:first-of-type div a:last-child {
-  background: var(--teal);
-}
-
-section:first-of-type div a:last-child:hover {
-  box-shadow: 0 8px 20px rgba(20, 184, 166, 0.18);
-}
-
-/* Section labels */
-
-section > p:first-child {
-  color: var(--teal);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-/* Headings */
-
-section h2 {
-  margin: 10px 0 25px;
-
-  font-size: clamp(32px, 5vw, 52px);
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-}
-
-/* Paragraphs */
-
-section > p {
-  max-width: 700px;
-  color: var(--muted);
-}
-
-/* Projects */
-
-#projects > div {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-  margin-top: 40px;
-}
-
-article {
-  padding: 28px;
-
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-
-  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.04);
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-article:hover {
-  transform: translateY(-5px);
-
-  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
-}
-
-article > p:first-child {
-  color: var(--primary);
-  font-size: 13px;
-  font-weight: 700;
-}
-
-article h3 {
-  margin: 10px 0;
-  font-size: 21px;
-}
-
-article p:last-child {
-  color: var(--muted);
-  font-size: 15px;
-}
-
-/* Skills */
-
-#skills {
-  background: var(--primary-light);
-  max-width: none;
-  padding-left: max(30px, calc((100% - 1100px) / 2));
-  padding-right: max(30px, calc((100% - 1100px) / 2));
-}
-
-#skills > div {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 30px;
-}
-
-#skills span {
-  padding: 9px 15px;
-
-  background: white;
-  border: 1px solid #dbeafe;
-  border-radius: 999px;
-
-  color: #35679a;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-/* Contact */
-
-#contact {
-  text-align: center;
-}
-
-#contact > p {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#contact a {
-  display: inline-block;
-  margin-top: 15px;
-
-  color: var(--primary);
-  font-size: 18px;
-  font-weight: 600;
-}
-
-#contact a:hover {
-  color: var(--teal);
-}
-
-/* Footer */
-
-footer {
-  padding: 35px 30px;
-
-  border-top: 1px solid var(--border);
-
-  text-align: center;
-  color: var(--muted);
-
-  font-size: 14px;
-}
-
-/* Mobile */
+/* ======================================================
+   MOBILE
+   ====================================================== */
 
 @media (max-width: 768px) {
-  nav {
-    padding: 20px;
+  .map-container {
+    height: 400px;
+  }
+}
+
+
+/* ======================================================
+   REDUCED MOTION
+   ====================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 
-  nav div {
-    display: none;
-  }
-
-  section {
-    padding: 70px 20px;
-  }
-
-  section:first-of-type {
-    min-height: 600px;
-  }
-
-  section:first-of-type h1 {
-    font-size: 48px;
-  }
-
-  #projects > div {
-    grid-template-columns: 1fr;
-  }
-
-  #skills {
-    padding-left: 20px;
-    padding-right: 20px;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
