@@ -5,7 +5,7 @@ export default function Home() {
     <main>
       {/* Navigation */}
       <nav>
-        <h2>Zachary Maynard-Senior Developer      123456789</h2>
+        <h2>Zachary Maynard-Senior Developer</h2>
 
         <div>
           <a href="#about">About</a>
@@ -34,6 +34,17 @@ export default function Home() {
         <div>
           <a href="#projects">View Projects</a>
           <a href="#contact">Contact Me</a>
+        </div>
+
+        <div>
+          <Image
+            src="/images/profile.jpg"
+            alt="Zachary Maynard - GIS & Web Developer"
+            width={400}
+            height={400}
+            priority
+            className="rounded-full object-cover"
+          />
         </div>
       </section>
 
