@@ -271,9 +271,7 @@ export default function Home() {
             href="#contact"
             className="hidden rounded-full border border-cyan-400/40 px-5 py-2 text-sm font-medium text-cyan-300 transition hover:bg-cyan-400 hover:text-slate-950 md:block"
           >
-
             Let's Talk
-
           </Link>
 
 
@@ -285,9 +283,7 @@ export default function Home() {
             className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-xl md:hidden"
             aria-label="Toggle navigation menu"
           >
-
             {mobileMenu ? "×" : "☰"}
-
           </button>
 
         </div>
@@ -374,7 +370,7 @@ export default function Home() {
         <div className="pointer-events-none absolute bottom-[10%] right-[5%] h-96 w-96 rounded-full bg-blue-500/10 blur-3xl" />
 
 
-        {/* GRID */}
+        {/* GRID BACKGROUND */}
 
         <div className="pointer-events-none absolute inset-0 opacity-[0.03]">
 
@@ -478,9 +474,7 @@ export default function Home() {
                     key={technology}
                     className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-slate-300"
                   >
-
                     {technology}
-
                   </span>
 
                 )
@@ -562,7 +556,7 @@ export default function Home() {
               </div>
 
 
-              {/* BADGE */}
+              {/* SPECIALIZATION BADGE */}
 
               <div className="absolute -bottom-5 -left-5 rounded-2xl border border-white/10 bg-slate-900/95 px-5 py-4 shadow-xl backdrop-blur-xl">
 
@@ -577,7 +571,7 @@ export default function Home() {
               </div>
 
 
-              {/* BADGE */}
+              {/* FOCUS BADGE */}
 
               <div className="absolute -right-4 top-10 rounded-2xl border border-white/10 bg-slate-900/95 px-4 py-3 shadow-xl backdrop-blur-xl">
 
@@ -668,9 +662,7 @@ export default function Home() {
                       key={technology}
                       className="rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-xs text-slate-300"
                     >
-
                       {technology}
-
                     </span>
 
                   )
@@ -688,7 +680,7 @@ export default function Home() {
 
 
       {/* ==================================================
-          MY WORK / PROJECTS
+          MY WORK
       ================================================== */}
 
       <section
@@ -747,7 +739,7 @@ export default function Home() {
 
                 {/* PROJECT IMAGE */}
 
-                <div className="relative h-40 overflow-hidden">
+                <div className="relative h-28 overflow-hidden">
 
                   <Image
                     src={project.image}
@@ -758,9 +750,9 @@ export default function Home() {
                   />
 
 
-                  {/* IMAGE GRADIENT */}
+                  {/* IMAGE OVERLAY */}
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent" />
 
 
                   {/* PROJECT NUMBER */}
@@ -776,12 +768,12 @@ export default function Home() {
 
                 {/* PROJECT CONTENT */}
 
-                <div className="p-5">
+                <div className="p-4">
 
 
                   {/* CATEGORY */}
 
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-cyan-400">
+                  <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-cyan-400">
 
                     {project.category}
 
@@ -790,7 +782,7 @@ export default function Home() {
 
                   {/* TITLE */}
 
-                  <h3 className="mt-2 text-lg font-bold text-white">
+                  <h3 className="mt-1.5 text-base font-bold text-white">
 
                     {project.title}
 
@@ -799,7 +791,7 @@ export default function Home() {
 
                   {/* DESCRIPTION */}
 
-                  <p className="mt-2 line-clamp-2 text-sm leading-6 text-slate-400">
+                  <p className="mt-1.5 line-clamp-2 text-xs leading-5 text-slate-400">
 
                     {project.description}
 
@@ -808,7 +800,7 @@ export default function Home() {
 
                   {/* TECHNOLOGIES */}
 
-                  <div className="mt-4 flex flex-wrap gap-1.5">
+                  <div className="mt-3 flex flex-wrap gap-1">
 
                     {project.technologies
                       .slice(0, 3)
@@ -816,7 +808,7 @@ export default function Home() {
 
                         <span
                           key={technology}
-                          className="rounded-md border border-white/10 bg-white/5 px-2 py-1 text-[10px] text-slate-300"
+                          className="rounded-md border border-white/10 bg-white/5 px-2 py-1 text-[9px] text-slate-300"
                         >
 
                           {technology}
@@ -832,7 +824,7 @@ export default function Home() {
 
                   <Link
                     href={project.link}
-                    className="mt-5 inline-flex items-center text-xs font-semibold text-cyan-400 transition hover:text-cyan-300"
+                    className="mt-4 inline-flex items-center text-xs font-semibold text-cyan-400 transition hover:text-cyan-300"
                   >
 
                     View Project
@@ -957,6 +949,8 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
 
 
+          {/* SKILLS HEADER */}
+
           <div className="max-w-3xl">
 
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-400">
@@ -1079,7 +1073,7 @@ export default function Home() {
           <div className="mt-9 flex flex-wrap justify-center gap-4">
 
 
-            {/* CHANGE EMAIL */}
+            {/* EMAIL */}
 
             <a
               href="mailto:your-email@example.com"
