@@ -17,7 +17,8 @@ export default function Home() {
 
       {/* Hero */}
       <section id="about">
-  <div>
+  <div className="flex items-center gap-8">
+    
     {/* Profile Photo */}
     <Image
       src="/images/profile.jpg"
@@ -27,34 +28,15 @@ export default function Home() {
       className="rounded-full object-cover"
     />
 
-    {/* About Me */}
-    <div>
-      <p>About Me</p>
+    {/* Sentence beside photo */}
+    <p className="max-w-xl text-lg">
+      I build modern web applications using React, Next.js,
+      Mapbox, Cesium, OpenLayers and other geospatial
+      technologies.
+    </p>
 
-        <h2>GIS meets modern web development.</h2>
-
-            <p>
-             I’m a GIS & Web Developer passionate about building
-              interactive 2D and 3D geospatial applications that
-            turn complex spatial data into useful web experiences.
-           </p>
-          </div>
-        </div>
-      </section>
-
-      {/* About */}
-      <section id="about">
-        <p>About Me</p>
-
-        <h2>GIS meets modern web development.</h2>
-
-        <p>
-          I am interested in building interactive mapping
-          applications and geospatial web experiences.
-          My interests include web mapping, 3D visualization,
-          spatial data and modern frontend development.
-        </p>
-      </section>
+  </div>
+</section>
 
       {/* Projects */}
       <section id="projects">
